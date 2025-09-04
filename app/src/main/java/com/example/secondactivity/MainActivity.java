@@ -24,12 +24,16 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        // Declaring variables to store UI elements
         final EditText etData = findViewById(R.id.etData);
         final Button btnClick = findViewById(R.id.btnClick);
 
+        // Handles onclick event when the button is pressed
         btnClick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Navigate to another activity and pass some data/value
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                 String str = etData.getText().toString();
                 intent.putExtra("MY_MESSAGE", str);
